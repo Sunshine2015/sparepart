@@ -23,6 +23,15 @@
 	
 	<context:component-scan base-package="com.seagate.sparepart" />
 	
+	<!-- Declare a Tiles viewer resolver -->
+	<beans:bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"/>
 	
+	<beans:bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<beans:property name="definitions">
+			<beans:list>
+				<beans:value>/WEB-INF/views/**/views.xml</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
 	
 </beans:beans>
